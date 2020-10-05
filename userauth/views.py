@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import CreateForm
 from django.shortcuts import redirect
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 # Create your views here
 def UserRegisterView(request):
 	form = CreateForm()
@@ -13,8 +14,18 @@ def UserRegisterView(request):
 			messages.success(request, 'Account was created ' + user + '.')
 			return redirect('another')
 	context = {'form':form}
-	return render(request, 'practice.html', context)
+	return render(request, 'register.html', context)
 def another(request):
-	return render(request, 'hello.html')
+	if request.method == 'POST':
+		username=request.POST.get('username')
+		password=request.POST.get('password')
+		user = authenticate(request, username=username,password=password)
+		if user is not None:
+			login(request, user)
+			return redirect('home')
+	return render(request, 'login.html')
+
+def home(request):
+	return render(request, 'home.html')
 
 
