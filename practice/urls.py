@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('userauth/', include('userauth.urls')),
+    path('backoffice/', include('backoffice.urls')),
     ]

@@ -23,8 +23,9 @@ def another(request):
 		if user is not None:
 			login(request, user)
 			return redirect('home')
+		else:
+			messages.info(request, 'Username or Password is incorrect')
 	return render(request, 'login.html')
-
 def home(request):
 	return render(request, 'home.html')
 

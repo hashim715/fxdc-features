@@ -1,0 +1,24 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding:0;
+}
+
+.table-container {
+	position: absolute;
+	top:5%;
+	width: 330px;
+	left: 31%;
+	border: 1px solid black;
+	border-radius: 12px;
+}
+
+.table-deposit {
+	position: absolute;
+	top:5%;
+	width: 330px;
+	left: 65%;
+	border: 1px solid black;
+	border-radius: 12px;
+}
+
