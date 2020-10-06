@@ -3,22 +3,19 @@
 	margin: 0;
 	padding:0;
 }
-
-.table-container {
-	position: absolute;
-	top:5%;
-	width: 330px;
-	left: 31%;
-	border: 1px solid black;
-	border-radius: 12px;
+.flex-container {
+    display: flex;
+	flex-direction:row;
+	padding-top: 30px;
+	padding-left: 210px;
 }
 
-.table-deposit {
-	position: absolute;
-	top:5%;
-	width: 330px;
-	left: 65%;
-	border: 1px solid black;
-	border-radius: 12px;
+table {
+	border:1px solid black;
 }
-
+@media screen and (max-width: 680px) {
+  .flex-container {
+    flex-direction: column;
+    padding-left: 0;
+  }
+}
